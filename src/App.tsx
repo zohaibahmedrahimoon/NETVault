@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedBackground from "./components/background/AnimatedBackground";
 
 function App() {
   return (
@@ -6,90 +7,101 @@ function App() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top, #14213d 0%, #0b1120 45%, #050816 100%)",
-        color: "#ffffff",
+          "radial-gradient(circle at top,#111827 0%,#0B1120 40%,#050816 100%)",
+        overflow: "hidden",
+        position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        fontFamily: "Poppins, sans-serif",
-        overflow: "hidden",
-        position: "relative",
       }}
     >
-      {/* Background Glow */}
-      <div
-        style={{
-          position: "absolute",
-          width: "500px",
-          height: "500px",
-          background: "#2563eb",
-          filter: "blur(180px)",
-          opacity: 0.18,
-          borderRadius: "50%",
-          top: "-150px",
-          right: "-120px",
-        }}
-      />
+      {/* Animated Background */}
+      <AnimatedBackground />
+
+      {/* Main Content */}
 
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
+        transition={{ duration: 0.8 }}
         style={{
+          position: "relative",
+          zIndex: 10,
           textAlign: "center",
-          zIndex: 2,
+          color: "white",
           padding: "40px",
         }}
       >
-        <h1
+        <motion.h1
+          initial={{ scale: 0.92 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
           style={{
-            fontSize: "72px",
+            fontSize: "78px",
             fontWeight: 800,
-            marginBottom: "12px",
             letterSpacing: "2px",
+            marginBottom: "12px",
           }}
         >
           NETVault
-        </h1>
+        </motion.h1>
 
         <p
           style={{
+            color: "#94a3b8",
             fontSize: "22px",
-            color: "#cbd5e1",
-            marginBottom: "8px",
+            marginBottom: "10px",
           }}
         >
           Built for NUST.
         </p>
 
-        <p
+        <h2
           style={{
-            fontSize: "22px",
             color: "#60a5fa",
-            fontWeight: 700,
-            marginBottom: "40px",
+            fontSize: "28px",
+            marginBottom: "35px",
           }}
         >
           Nothing Else.
-        </p>
+        </h2>
 
         <motion.button
-          whileHover={{ scale: 1.06 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{
+            scale: 1.05,
+          }}
+          whileTap={{
+            scale: 0.95,
+          }}
           style={{
-            padding: "16px 36px",
+            padding: "16px 42px",
             borderRadius: "14px",
-            border: "none",
             background: "#2563eb",
-            color: "#fff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
             fontSize: "18px",
             fontWeight: 700,
-            cursor: "pointer",
-            boxShadow: "0 0 25px rgba(37,99,235,.45)",
+            boxShadow: "0 0 40px rgba(37,99,235,.45)",
           }}
         >
           Start Your Journey
         </motion.button>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.75 }}
+          transition={{
+            delay: 1,
+          }}
+          style={{
+            marginTop: "45px",
+            color: "#94a3b8",
+            fontSize: "15px",
+          }}
+        >
+          Engineering NET Preparation Platform
+        </motion.p>
       </motion.div>
     </main>
   );
