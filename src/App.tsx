@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedBackground from "./components/background/AnimatedBackground";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
@@ -15,11 +16,13 @@ function App() {
         alignItems: "center",
       }}
     >
-      {/* Animated Background */}
+      {/* Background */}
       <AnimatedBackground />
 
-      {/* Main Content */}
+      {/* Navigation */}
+      <Navbar />
 
+      {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
@@ -67,12 +70,8 @@ function App() {
         </h2>
 
         <motion.button
-          whileHover={{
-            scale: 1.05,
-          }}
-          whileTap={{
-            scale: 0.95,
-          }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           style={{
             padding: "16px 42px",
             borderRadius: "14px",
@@ -91,9 +90,7 @@ function App() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.75 }}
-          transition={{
-            delay: 1,
-          }}
+          transition={{ delay: 1 }}
           style={{
             marginTop: "45px",
             color: "#94a3b8",
