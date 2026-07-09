@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import LiveClock from "../clock/LiveClock";
 
 export default function Navbar() {
   return (
@@ -22,30 +23,25 @@ export default function Navbar() {
         backdropFilter: "blur(16px)",
         background: "rgba(8,15,30,.55)",
 
-        borderBottom: "1px solid rgba(255,255,255,.08)"
+        borderBottom: "1px solid rgba(255,255,255,.08)",
       }}
     >
-      {/* Logo */}
-
       <div
         style={{
           fontSize: "28px",
           fontWeight: 800,
-          color: "#ffffff",
-          letterSpacing: "1px"
+          color: "#fff",
         }}
       >
         NET<span style={{ color: "#3b82f6" }}>Vault</span>
       </div>
-
-      {/* Navigation */}
 
       <nav
         style={{
           display: "flex",
           gap: "28px",
           color: "#cbd5e1",
-          fontWeight: 500
+          fontWeight: 500,
         }}
       >
         <a href="#">Home</a>
@@ -55,17 +51,7 @@ export default function Navbar() {
         <a href="#">Progress</a>
       </nav>
 
-      {/* Live Clock Placeholder */}
-
-      <div
-        style={{
-          color: "#60a5fa",
-          fontWeight: 700,
-          fontSize: "17px"
-        }}
-      >
-        --:--:--
-      </div>
+      <LiveClock />
     </motion.header>
   );
 }
