@@ -1,37 +1,35 @@
 import { motion } from "framer-motion";
+import SubjectCards from "../cards/SubjectCards";
 
 export default function Hero() {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 35 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: .8 }}
       style={{
         textAlign: "center",
         color: "white",
         zIndex: 10,
         position: "relative",
-        maxWidth: "900px",
-        padding: "40px"
+        maxWidth: "1100px",
+        padding: "40px",
       }}
     >
-      <motion.h1
-        initial={{ scale: 0.92 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
+      <h1
         style={{
           fontSize: "76px",
           fontWeight: 800,
-          marginBottom: "10px"
         }}
       >
         NETVault
-      </motion.h1>
+      </h1>
 
       <p
         style={{
           color: "#94a3b8",
-          fontSize: "22px"
+          fontSize: "22px",
+          marginTop: "8px",
         }}
       >
         Built for NUST.
@@ -40,9 +38,7 @@ export default function Hero() {
       <h2
         style={{
           color: "#60a5fa",
-          marginTop: "6px",
-          marginBottom: "30px",
-          fontSize: "28px"
+          marginBottom: "25px",
         }}
       >
         Nothing Else.
@@ -51,32 +47,17 @@ export default function Hero() {
       <p
         style={{
           color: "#CBD5E1",
-          fontSize: "18px",
           lineHeight: 1.8,
-          marginBottom: "35px"
+          maxWidth: "760px",
+          margin: "0 auto",
         }}
       >
-        One platform for Mathematics, Physics and English preparation
-        specifically designed for the NUST Engineering Entry Test.
+        Practice Mathematics, Physics and English with structured chapters,
+        topic-wise MCQs, AI explanations, progress tracking and realistic NUST
+        NET mock tests.
       </p>
 
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        style={{
-          background: "#2563eb",
-          color: "white",
-          border: "none",
-          padding: "18px 42px",
-          borderRadius: "14px",
-          cursor: "pointer",
-          fontWeight: 700,
-          fontSize: "18px",
-          boxShadow: "0 0 35px rgba(37,99,235,.45)"
-        }}
-      >
-        Start Practicing
-      </motion.button>
+      <SubjectCards />
     </motion.section>
   );
 }
